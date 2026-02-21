@@ -1,0 +1,58 @@
+services:
+  db:
+    image: postgres:15
+    container_name: apkpp_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: apkpp_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "16001:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  strapi:
+    image: prawee/strapi
+    container_name: apkpp_strapi
+    restart: always
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASS}
+    ports:
+      - "16000:1337"
+    depends_on:
+      - db
+    networks:
+      - backend
+
+volumes:
+  pgdata:
+  pgadmin_data:
+
+networks:
+  backend:
+    driver: bridge
