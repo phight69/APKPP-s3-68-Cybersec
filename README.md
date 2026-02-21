@@ -13,3 +13,4 @@
 - Thanakhet SaisuWan 6702041511098
 
 ## Thanakhet Saisuwan : I'm Building and new Create a new branch
+## Nutthawut  Arbsa : Strapi Service - Uses prawee/strapi image  - Used as backend API  - Connected to database  
