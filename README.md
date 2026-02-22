@@ -14,6 +14,6 @@
 
 ## Thanakhet Saisuwan : I'm Building and new Create a new branch
 ## Nutthawut  Arbsa : Strapi Service - Uses prawee/strapi image  - Used as backend API  - Connected to database  
-## Suttikarn Rukmai : Create and combine code.
+## Suttikarn Rakmai : Create and combine code.
 ## Ekkarat Nakmueang : Create database.
-## Warakorn Kamsri : Project manager and create repository .
+## Warakorn Kamsee : Project manager and create repository .
