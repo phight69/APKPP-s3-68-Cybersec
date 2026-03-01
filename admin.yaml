@@ -1,0 +1,23 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: apkpp_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "16001:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - backend
+
+volumes:
+  pgadmin_data:
+
+networks:
+  backend:
+    external: true
