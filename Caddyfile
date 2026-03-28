@@ -1,0 +1,15 @@
+# Caddy reverse-proxy for the APKPP stack
+#
+# Routes:
+#   - http://localhost         -> Strapi API
+#   - http://pgadmin.localhost -> pgAdmin UI
+#
+# NOTE: Most OSes resolve *.localhost to 127.0.0.1 automatically.
+
+http://localhost {
+    reverse_proxy strapi:1337
+}
+
+http://pgadmin.localhost {
+    reverse_proxy pgadmin:80
+}

@@ -2,3 +2,4 @@ include:
   - db.yaml
   - app.yaml
   - admin.yaml
+  - caddy-proxy.yaml
