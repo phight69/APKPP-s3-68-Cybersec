@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:15
-    container_name: apkpp_db
+    container_name: 68_s3_APKPP_DB
     restart: always
     environment:
       POSTGRES_USER: ${DATABASE_USER}

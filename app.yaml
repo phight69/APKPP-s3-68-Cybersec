@@ -1,7 +1,7 @@
 services:
   strapi:
     image: prawee/strapi
-    container_name: apkpp_strapi
+    container_name: 68_s3_APKPP_app
     restart: always
     env_file:
       - .env

@@ -1,7 +1,7 @@
 services:
   pgadmin:
     image: dpage/pgadmin4
-    container_name: apkpp_pgadmin
+    container_name: 68_s3_APKPP_admin
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
